@@ -7,8 +7,11 @@ import pdfplumber
 import pandas as pd
 from fastapi import FastAPI, File, UploadFile, Response
 from fastapi.responses import HTMLResponse, StreamingResponse
+from fastapi import FastAPI
+app = FastAPI()
 
-app = FastAPI(title="PDF a Excel (Facturas)", version="1.0.0")
+
+#app = FastAPI(title="PDF a Excel (Facturas)", version="1.0.0")
 
 def _clean(s: str) -> str:
     return re.sub(r"\s+", " ", s).strip()
